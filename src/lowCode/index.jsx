@@ -36,10 +36,13 @@ export default () => {
   console.log(activeSchema.current, "所有配置");
   return (
     <div className="lowCode">
+      <div className="title">
+        <div>LowCode</div>
+      </div>
       <ConfigContent.Provider value={contentConfigValue}>
         <Tabs tabPosition={"left"}>
           <TabPane tab="1" key="1">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="lowCode-schema">
               <Left />
               <Middle />
               <Right />

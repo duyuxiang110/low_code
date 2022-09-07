@@ -45,19 +45,19 @@ export default () => {
   };
 
   return (
-    <div style={{ width: "50%", background: "#ebebeb", padding: 3 }}>
-      <div style={{ height: "100%", background: "white" }}>
-        <div onClick={() => setIsModalVisible(true)}>查看</div>
-        <Form
-          form={form}
-          {...FormConfig.current.configs.fieldProperties}
-          style={{ height: "100%" }}
+    <div className="lowCode-middle">
+      <div style={{ background: "#eee", height: "100%" }}>
+        <div
+          className="lowCode-middle-title"
+          onClick={() => setIsModalVisible(true)}
         >
+          查看
+        </div>
+        <Form form={form} {...FormConfig.current.configs.fieldProperties}>
           <div
             id="dragMiddle"
             onDragOver={onDragOver}
             onDrop={onDrop}
-            style={{ height: "100%" }}
             onClick={global}
           >
             {schemaList.map((item, index) => {

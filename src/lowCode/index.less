@@ -1,18 +1,40 @@
+.title {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #cecece;
+  div {
+    margin-left: 25px;
+  }
+}
 .lowCode {
-  .ant-tabs {
-    height: 100% !important;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .lowCode-schema {
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
   }
   .lowCode-left {
-    display: "flex";
-    justify-content: center;
     width: 25%;
+    display: flex;
+    justify-content: center;
     background: white;
+    margin-right: -6.5px;
+  }
+  .lowCode-middle {
+    width: 50%;
+    background: #eee;
+    .lowCode-middle-title {
+      margin: 0px 10px 0 10px;
+    }
   }
   .lowCode-right {
     position: relative;
-    width: 25%;
-    height: calc(100vh - 100px);
-    // padding: 0 10px;
+    width: 26%;
+    height: calc(100vh - 40px);
+    padding: 10px 0;
     overflow-y: auto;
     background: white;
     .ant-drawer-content-wrapper {
@@ -23,11 +45,11 @@
 
 .item-content {
   display: inline-block;
-  width: 33%;
-  height: 88px;
-  margin-right: -1px;
+  width: 33.33%;
+  height: 90px;
+  margin-left: -1px;
   margin-bottom: -1px;
-  border: 1px solid #cecece;
+  border: 1px solid #f0f0f0;
   .item-forbidden {
     width: 100%;
     height: 100%;
@@ -45,12 +67,15 @@
   text-align: center;
 }
 #dragMiddle {
+  height: calc(100vh - 80px);
   position: relative;
-  padding: 20px 0;
+  margin: 10px 10px 30px 10px;
+  background: white;
+  padding-top: 1px;
   .middle-form-item {
     position: relative;
     margin: 27px 0;
-    padding: 5px 10px;
+    padding: 0 10px;
     outline: 0;
     .ant-form-item {
       margin-bottom: 0;
@@ -74,4 +99,10 @@
   .middle-border {
     outline: 2px solid #1890ff;
   }
+}
+.ant-tabs-left
+  > .ant-tabs-content-holder
+  > .ant-tabs-content
+  > .ant-tabs-tabpane {
+  padding-left: 0 !important;
 }
