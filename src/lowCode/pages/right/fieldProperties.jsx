@@ -66,23 +66,16 @@ export default ({
   FormConfig,
 }) => {
   const typeofPropDefaultValue = useRef(typeof value);
-
-  const [saveRules, setSaveRules] = useState([
-    { require: true, message: "" },
-    // { len: 0, message: '长度' },
-    { max: 0, message: "最大长度" },
-    { min: 0, message: "最小长度" },
+  const rulesRef = useRef([
+    { require: false, message: "" },
+    { max: null, message: "" },
+    { min: null, message: "" },
   ]);
+
   const [defaultValue, setDefaultValue] = useState(value);
   const [visible, setVisible] = useState(false);
 
   const type_layout = componentPropertiesType[label]?.type;
-
-  useMemo(() => {
-    if (saveRules) {
-      fieldProperties.rules = saveRules;
-    }
-  }, [saveRules]);
 
   const handleChange = (e) => {
     if (activeSchema.current.id === id) {
@@ -193,10 +186,9 @@ export default ({
             <Rules
               visible={visible}
               setVisible={setVisible}
-              saveRules={saveRules}
+              rulesRef={rulesRef}
               render={render}
-              setSaveRules={setSaveRules}
-              rulesList={fieldProperties.rules}
+              fieldProperties={fieldProperties}
             />
           ) : null}
         </div>

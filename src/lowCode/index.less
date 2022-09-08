@@ -21,13 +21,20 @@
     display: flex;
     justify-content: center;
     background: white;
-    margin-right: -6.5px;
+    margin-right: -8px;
   }
   .lowCode-middle {
     width: 50%;
     background: #eee;
+    padding-top: 15px;
     .lowCode-middle-title {
       margin: 0px 10px 0 10px;
+      border: 1px solid #d9d9d9;
+      background: white;
+      line-height: 24px;
+      height: 24px;
+      width: 25px;
+      text-align: center;
     }
   }
   .lowCode-right {
@@ -45,7 +52,7 @@
 
 .item-content {
   display: inline-block;
-  width: 33.33%;
+  width: 32.7%;
   height: 90px;
   margin-left: -1px;
   margin-bottom: -1px;
@@ -67,11 +74,12 @@
   text-align: center;
 }
 #dragMiddle {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 100px);
   position: relative;
-  margin: 10px 10px 30px 10px;
+  margin: 10px 10px 15px 10px;
   background: white;
-  padding-top: 1px;
+  padding: 1px;
+  overflow-y: auto;
   .middle-form-item {
     position: relative;
     margin: 27px 0;

@@ -55,7 +55,6 @@ export default ({ index, dragIndex, type, configs, item, isGlobal }) => {
     isGlobal.current = false;
   };
   const onMouseLeave = () => {
-    console.log(dragMiddle);
     dragMiddle.style.outline = "1px dashed #1890ff";
     isGlobal.current = true;
   };
