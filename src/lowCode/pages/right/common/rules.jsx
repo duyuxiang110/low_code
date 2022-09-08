@@ -39,7 +39,6 @@ export default ({ visible, setVisible, rulesRef, render, fieldProperties }) => {
         item[type] = e;
       }
       Object.keys(item).forEach((j) => {
-        console.log(item, item[j]);
         if (item[j] === undefined || item[j] === null || item[j] === "") {
           delete item[j];
         }
