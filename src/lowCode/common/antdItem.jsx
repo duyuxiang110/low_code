@@ -12,6 +12,7 @@ import {
   Switch,
   TreeSelect,
   Upload,
+  Rate,
 } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 
@@ -31,6 +32,10 @@ const antdItem = {
         // rules: [{ required: true, message: "请输入标题！" }],
       },
       componentProperties: {
+        addonBefore: "",
+        addonAfter: "",
+        prefix: "",
+        suffix: "",
         disabled: false,
         placeholder: "请输入",
         allowClear: false,
@@ -71,34 +76,6 @@ const antdItem = {
         maxLength: 20,
         showCount: false,
         bordered: true,
-      },
-      styles: {
-        width: "",
-        height: "",
-        margin: undefined,
-        padding: undefined,
-        border: undefined,
-        borderRadius: undefined,
-      },
-    },
-  },
-  inputPassword: {
-    type: "inputPassword",
-    StandardInput: Input.Password,
-    configs: {
-      fieldProperties: {
-        name: "inputPassword",
-        label: "密码",
-        initialValue: undefined,
-        noStyle: false,
-        hidden: false,
-        rules: [],
-        // rules: [{ required: true, message: "请输入密码！" }],
-      },
-      componentProperties: {
-        disabled: false,
-        placeholder: "请输入",
-        visibilityToggle: true,
       },
       styles: {
         width: "",
@@ -340,10 +317,7 @@ const antdItem = {
       },
       componentProperties: {
         disabled: false,
-        options: [
-          { label: "A", value: 1 },
-          { label: "B", value: 2 },
-        ],
+        options: Object(),
       },
       styles: {
         width: "",
@@ -535,6 +509,9 @@ const antdItem = {
         disabled: false,
         className: "",
         autoFocus: false,
+        checkedChildren: "",
+        unCheckedChildren: "",
+        loading: false,
       },
       styles: {
         width: "",
@@ -553,18 +530,18 @@ const antdItem = {
       fieldProperties: {
         name: "button",
         label: "按钮",
-        wrapperCol: { offset: 0 },
         noStyle: false,
         hidden: false,
       },
       componentProperties: {
         disabled: false,
-        type: "primary",
+        type: Object(),
         htmlType: "submit",
         block: false,
         danger: false,
         ghost: false,
         shape: undefined,
+        loading: false,
       },
       styles: {
         width: "",
@@ -604,6 +581,35 @@ const antdItem = {
         tooltipPlacement: undefined,
         tooltipVisible: false,
         vertical: false,
+      },
+      styles: {
+        width: "",
+        height: "",
+        margin: undefined,
+        padding: undefined,
+        border: undefined,
+        borderRadius: undefined,
+      },
+    },
+  },
+  rate: {
+    type: "rate",
+    StandardInput: Rate,
+    configs: {
+      fieldProperties: {
+        name: "rate",
+        label: "评分",
+        initialValue: undefined,
+        noStyle: false,
+        hidden: false,
+        rules: [],
+      },
+      componentProperties: {
+        allowClear: true,
+        disabled: false,
+        allowHalf: false,
+        count: 5,
+        tooltips: "",
       },
       styles: {
         width: "",

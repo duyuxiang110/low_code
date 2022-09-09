@@ -1,40 +1,36 @@
 import {
   AndroidOutlined,
   FormOutlined,
-  EditOutlined,
+  EditTwoTone,
   FieldBinaryOutlined,
-  KeyOutlined,
   ProfileOutlined,
   MergeCellsOutlined,
   ScheduleOutlined,
-  DashboardOutlined,
   DownloadOutlined,
   CrownOutlined,
-  PauseCircleOutlined,
+  PauseCircleTwoTone,
   MinusOutlined,
-  CheckSquareOutlined,
-  CheckCircleOutlined,
+  CheckSquareTwoTone,
+  CheckCircleTwoTone,
   AlignLeftOutlined,
+  StarTwoTone,
+  CalendarTwoTone,
 } from "@ant-design/icons";
 import React from "react";
 const style_ = {
   style: {
     fontSize: 24,
-    color: "#999999",
+    color: "#40a9ff",
   },
 };
 export const icon = {
   input: {
     label: "输入框",
-    value: <EditOutlined {...style_} />,
+    value: <EditTwoTone {...style_} />,
   },
   inputTexArea: {
     label: "多行输入",
     value: <FormOutlined {...style_} />,
-  },
-  inputPassword: {
-    label: "密码框",
-    value: <KeyOutlined {...style_} />,
   },
   inputNumber: {
     label: "数字框",
@@ -54,7 +50,7 @@ export const icon = {
   },
   checkboxGroup: {
     label: "多选框",
-    value: <CheckSquareOutlined {...style_} />,
+    value: <CheckSquareTwoTone {...style_} />,
   },
   checkbox: {
     label: "勾选开关",
@@ -62,7 +58,7 @@ export const icon = {
   },
   radioGroup: {
     label: "单选",
-    value: <CheckCircleOutlined {...style_} />,
+    value: <CheckCircleTwoTone {...style_} />,
   },
   datePicker: {
     label: "日期",
@@ -70,7 +66,7 @@ export const icon = {
   },
   rangePicker: {
     label: "日期2",
-    value: <DashboardOutlined {...style_} />,
+    value: <CalendarTwoTone {...style_} />,
   },
   upload: {
     label: "上传",
@@ -78,7 +74,7 @@ export const icon = {
   },
   switch: {
     label: "开关",
-    value: <PauseCircleOutlined {...style_} />,
+    value: <PauseCircleTwoTone {...style_} />,
   },
   button: {
     label: "按钮",
@@ -87,5 +83,9 @@ export const icon = {
   slider: {
     label: "滑动输入条",
     value: <MinusOutlined {...style_} />,
+  },
+  rate: {
+    label: "评分",
+    value: <StarTwoTone {...style_} />,
   },
 };

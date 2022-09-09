@@ -2,60 +2,14 @@ import React, { useState, useRef, Fragment, useMemo } from "react";
 import { Switch, Input, Select, Button } from "antd";
 import { labelConfig } from "./labelConfig";
 import Rules from "./common/rules";
+import {
+  componentPropertiesType,
+  style_,
+  style_2,
+  layout,
+  optionsLayout,
+} from "./common/componentPropertiesType";
 
-const style_ = {
-  style: {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "15px 5px",
-    borderBottom: "1px solid #e2e0e0",
-  },
-};
-const style_2 = {
-  style: {
-    width: 100,
-  },
-};
-const componentPropertiesType = {
-  labelCol: {
-    type: "labelCol",
-  },
-  wrapperCol: {
-    type: "wrapperCol",
-  },
-  size: {
-    type: "options",
-    value: [
-      { value: "small", label: "small" },
-      { value: "middle", label: "middle" },
-      { value: "large", label: "large" },
-    ],
-  },
-  layout: {
-    type: "options",
-    value: [
-      { value: "horizontal", label: "horizontal" },
-      { value: "vertical", label: "vertical" },
-      { value: "inline", label: "inline" },
-    ],
-  },
-  labelAlign: {
-    type: "options",
-    value: [
-      { value: "left", label: "left" },
-      { value: "right", label: "right" },
-    ],
-  },
-};
-const layout = {
-  span: 0,
-  offset: 0,
-};
-const optionsLayout = {
-  size: undefined,
-  layout: undefined,
-  labelAlign: undefined,
-};
 export default ({
   label,
   value,
@@ -66,11 +20,6 @@ export default ({
   FormConfig,
 }) => {
   const typeofPropDefaultValue = useRef(typeof value);
-  const rulesRef = useRef([
-    { require: false, message: "" },
-    { max: null, message: "" },
-    { min: null, message: "" },
-  ]);
 
   const [defaultValue, setDefaultValue] = useState(value);
   const [visible, setVisible] = useState(false);
@@ -96,7 +45,7 @@ export default ({
       render();
     }
   };
-
+  console.log(label, value);
   switch (typeofPropDefaultValue.current) {
     case "boolean":
       return (
@@ -114,6 +63,7 @@ export default ({
               <Select
                 options={componentPropertiesType[label]?.value}
                 onChange={(e) => handleStyles(e, label, label)}
+                defaultValue={value}
                 {...style_2}
               />
             </Fragment>
@@ -152,6 +102,7 @@ export default ({
                 onChange={(e) =>
                   handleStyles(e.target.value, "span", "labelCol")
                 }
+                defaultValue={value.span}
                 {...style_2}
               />
               <Input
@@ -159,6 +110,7 @@ export default ({
                 onChange={(e) =>
                   handleStyles(e.target.value, "offset", "labelCol")
                 }
+                defaultValue={value.offset}
                 {...style_2}
               />
             </Fragment>
@@ -170,6 +122,7 @@ export default ({
                 onChange={(e) =>
                   handleStyles(e.target.value, "span", "wrapperCol")
                 }
+                defaultValue={value.span}
                 {...style_2}
               />
               <Input
@@ -177,6 +130,7 @@ export default ({
                 onChange={(e) =>
                   handleStyles(e.target.value, "offset", "wrapperCol")
                 }
+                defaultValue={value.offset}
                 {...style_2}
               />
             </Fragment>
@@ -186,7 +140,7 @@ export default ({
             <Rules
               visible={visible}
               setVisible={setVisible}
-              rulesRef={rulesRef}
+              // rulesRef={rulesRef}
               render={render}
               fieldProperties={fieldProperties}
             />
